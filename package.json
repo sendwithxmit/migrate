@@ -1,0 +1,65 @@
+{
+  "name": "@xmit/migrate",
+  "version": "0.1.0",
+  "description": "Migrate your email data from any ESP to Transmit",
+  "type": "module",
+  "bin": {
+    "xmit-migrate": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "keywords": [
+    "email",
+    "migration",
+    "esp",
+    "sendgrid",
+    "mailchimp",
+    "brevo",
+    "resend",
+    "transmit",
+    "xmit"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sendwithxmit/migrate.git"
+  },
+  "homepage": "https://github.com/sendwithxmit/migrate#readme",
+  "bugs": {
+    "url": "https://github.com/sendwithxmit/migrate/issues"
+  }
+}
